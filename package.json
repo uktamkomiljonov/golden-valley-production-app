@@ -1,0 +1,14 @@
+{
+  "name": "golden-valley-production-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Golden Valley production packaging generator.",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node scripts/check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
