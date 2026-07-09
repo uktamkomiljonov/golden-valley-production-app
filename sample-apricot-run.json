@@ -1,0 +1,71 @@
+{
+  "brand": "Golden Valley",
+  "product": "Apricots",
+  "product_ru": "Абрикос",
+  "template": {
+    "id": "minimal",
+    "name": "Minimal Premium"
+  },
+  "variety": "Sun-ripened and hand picked",
+  "grade": "Premium",
+  "caliber": "45-50 mm",
+  "box": {
+    "code": "M",
+    "dimensions": "400 x 300 x 100 mm",
+    "net_weight": "4 KG"
+  },
+  "packaging": {
+    "type_id": "master-carton",
+    "type": "Master carton",
+    "material": "corrugated board",
+    "consumer_pack": "Master carton",
+    "units_per_carton": 1,
+    "carton_gross_weight_kg": 4.6
+  },
+  "shipment": {
+    "carton_count": 1200,
+    "total_net_kg": 4800,
+    "shipment_items_count": 1,
+    "shipment_total_cartons": 1200,
+    "shipment_total_net_kg": 4800,
+    "shipment_total_gross_kg": 5520,
+    "batch": "GV-APR-260709-001",
+    "harvest_date": "2026-07-09",
+    "packing_date": "2026-07-09",
+    "sscc": "347812340000015431"
+  },
+  "shipment_items": [
+    {
+      "sku": "GV-APRICOT-M-4KG",
+      "product": "Apricots",
+      "variety": "Sun-ripened and hand picked",
+      "grade": "Premium",
+      "caliber": "45-50 mm",
+      "box": "M",
+      "dimensions": "400 x 300 x 100 mm",
+      "packaging": "Master carton",
+      "consumer_pack": "Master carton",
+      "units_per_carton": 1,
+      "net_weight": "4 KG",
+      "gross_weight_per_carton_kg": 4.6,
+      "cartons": 1200,
+      "total_net_kg": 4800,
+      "batch": "GV-APR-260709-001",
+      "hs_code": "081090",
+      "sscc": "347812340000015431"
+    }
+  ],
+  "parties": {
+    "packed_by": "UTUMS GROUP LLC",
+    "exporter": "UTUMS GROUP LLC",
+    "importer": "BFG FIVE STAR FOODSTUFF TRADING LLC",
+    "origin": "Uzbekistan",
+    "destination": "Dubai, UAE",
+    "incoterms": "DAP Dubai, UAE"
+  },
+  "cold_chain": {
+    "temperature": "0...+2 C",
+    "keep_refrigerated": true
+  },
+  "qr_payload": "GV1|BR=Golden Valley|P=Apricots|V=Sun-ripened and hand picked|BOX=M|DIM=400x300x100mm|W=4 KG|G=Premium|CAL=45-50 mm|B=GV-APR-260709-001|PD=2026-07-09|HD=2026-07-09|O=Uzbekistan|EXP=UTUMS GROUP LLC|SSCC=347812340000015431"
+}
