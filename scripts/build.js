@@ -6,6 +6,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
 const brotliAppPath = path.join(root, "compressed-assets", "app.js.br.b64");
+const brotliAppPartsDir = path.join(root, "compressed-assets", "app-br-parts");
 const compressedAppPath = path.join(root, "compressed-assets", "app.js.gz.b64");
 const compressedAppPartsDir = path.join(root, "compressed-assets", "app-js-parts");
 const files = [
@@ -28,6 +29,13 @@ if (fs.existsSync(path.join(root, "app.js"))) {
   const zlib = require("zlib");
   const compressed = Buffer.from(fs.readFileSync(brotliAppPath, "utf8"), "base64");
   fs.writeFileSync(path.join(dist, "app.js"), zlib.brotliDecompressSync(compressed));
+} else if (fs.existsSync(brotliAppPartsDir)) {
+  const zlib = require("zlib");
+  const encoded = fs.readdirSync(brotliAppPartsDir)
+    .sort()
+    .map((file) => fs.readFileSync(path.join(brotliAppPartsDir, file), "utf8"))
+    .join("");
+  fs.writeFileSync(path.join(dist, "app.js"), zlib.brotliDecompressSync(Buffer.from(encoded, "base64")));
 } else if (fs.existsSync(compressedAppPath)) {
   const zlib = require("zlib");
   const compressed = Buffer.from(fs.readFileSync(compressedAppPath, "utf8"), "base64");
