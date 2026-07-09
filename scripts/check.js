@@ -8,11 +8,19 @@ const zlib = require("zlib");
 const root = path.resolve(__dirname, "..");
 const appPath = path.join(root, "app.js");
 const brotliAppPath = path.join(root, "compressed-assets", "app.js.br.b64");
+const brotliAppPartsDir = path.join(root, "compressed-assets", "app-br-parts");
 const compressedAppPath = path.join(root, "compressed-assets", "app.js.gz.b64");
 const compressedAppPartsDir = path.join(root, "compressed-assets", "app-js-parts");
 function readCompressedApp() {
   if (fs.existsSync(brotliAppPath)) {
     return zlib.brotliDecompressSync(Buffer.from(fs.readFileSync(brotliAppPath, "utf8"), "base64")).toString("utf8");
+  }
+  if (fs.existsSync(brotliAppPartsDir)) {
+    const encoded = fs.readdirSync(brotliAppPartsDir)
+      .sort()
+      .map((file) => fs.readFileSync(path.join(brotliAppPartsDir, file), "utf8"))
+      .join("");
+    return zlib.brotliDecompressSync(Buffer.from(encoded, "base64")).toString("utf8");
   }
   const encoded = fs.existsSync(compressedAppPath)
     ? fs.readFileSync(compressedAppPath, "utf8")
